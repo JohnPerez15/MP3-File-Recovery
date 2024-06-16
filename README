@@ -1,0 +1,44 @@
+README
+This is an mp3 file recovery program for the ext3 filesystem.
+The first 5 steps is to prepare the drive for the program.
+Step 1:
+	Make sure the drive is completely wiped or zeroed out.
+Step 2:
+	Make a 2GB partition in your drive with no filesystem set,
+	if ext3 is not available.
+Step 3:
+	If ext3 was not available in the previous step. In command 
+	line use the (sudo mkfs -t ext3 /dev/sda1) command to set the 
+	filesystem to ext3. In you case the "a" in /dev/sda1
+	may differ. You can check the name of the partition with
+	the command lsblk.
+Step 4:
+	Save the mp3 file to the partition and unmount the drive.
+Step 5:
+	mount the drive and delete the file from the partition. Then
+	unmount the drive.
+
+The following step is running the command. This program takes in two arguments.
+The first is the drive we are recovering the file from. The second is the file
+we are recovering the file to. In this directory I have provided a clean file 
+called Recovered.mp3. This is where we will recover the file to.
+
+Step 6:
+	In command line use the command make. this will compile the program.
+	Using the command ls you can check if the executable "proj" is added.
+Step 7:
+	The next step is to run the program. In command line run the command
+	sudo ./proj /dev/sda ./Recovered.mp3
+	to run the program. In this case again the name of the drive maybe
+	different use the command lsblk to check if this is the name of the
+	drive. Similarily, you can change the location of the recovery file.
+	Make sure the set path is correct.
+Step 8:
+	The program may take time to run depending on the size of the file.
+	Once it is complete you can see that the recovery file you created has
+	changed to the the deleted mp3 file in the files program.
+
+
+
+	
+
